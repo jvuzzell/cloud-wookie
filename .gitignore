@@ -4,3 +4,4 @@ env_config.json
 *.tfstate
 *.tfstate.*
 .terraform*
+*.plan
