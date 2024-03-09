@@ -74,14 +74,14 @@ module "igw" {
 }
 
 module "nat_gw_az1" {
-    source            = "../../modules/natgw"
+    source            = "../../modules/nat"
     subnet_id         = module.public_subnet_1.subnet_id
     availability_zone = var.public_subnets[0].availability_zone
     common_tags       = var.common_tags
 }
 
 module "nat_gw_az2" {
-    source            = "../../modules/natgw"
+    source            = "../../modules/nat"
     subnet_id         = module.public_subnet_2.subnet_id
     availability_zone = var.public_subnets[1].availability_zone
     common_tags       = var.common_tags

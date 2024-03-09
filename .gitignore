@@ -1,2 +1,6 @@
 terraform.tfvars
 terraform.tfstate
+env_config.json
+*.tfstate
+*.tfstate.*
+.terraform*

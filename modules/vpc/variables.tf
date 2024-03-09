@@ -24,3 +24,9 @@ variable "common_tags" {
   description = "Common tags for all resources in the module"
   type        = map(string)
 }
+
+variable "vpc_id" {
+  description = "The ID of the VPC"
+  type        = string
+  default     = "vpc-mydevvpc"
+}
