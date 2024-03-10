@@ -2,7 +2,7 @@
 (Work in progress - documentation pending)
 
 ## Goals
-Managing COPA v1 and COPA Cloud environments (DEV, PROD, QA, etc) using reusable and version controlled components, this project demonstrates a generalized implementation of AWS services.
+Managing software environments (DEV, PROD, QA, etc) using reusable and version controlled components, this project demonstrates a generalized implementation of AWS services.
 
     1. Networking (In progress)
     2. Roles and Permissions (In progress)
