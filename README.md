@@ -1,71 +1,47 @@
-# Summary 
-(Work in progress - documentation pending)
+# Cloud Wookiee
+## Your Guide to Deployment Automation
+Welcome to Cloud Wookiee, the stalwart companion in your journey across the vast and sometimes tumultuous landscape of deployment automation. Cloud Wookiee empowers you to manage the lifecycle of your Terraform-based infrastructure with the grace of a Jedi.
+ 
+### Documentation
+- [Project Overview](docs/project-overview.md)
+- [Network Diagram](docs/assets/20240226_target-network-diagram.jpg)
 
-## Goals
-Managing COPA v1 and COPA Cloud environments (DEV, PROD, QA, etc) using reusable and version controlled components, this project demonstrates a generalized implementation of AWS services.
-
-    1. Networking (In progress)
-    2. Roles and Permissions (In progress)
-    3. Serverless VMs using Amazon Fargate for compute (Pending)
-    4. Serverless VMs using Amazon RDS for database storage (Pending)
-    5. Amazon S3 for cloud storage and archival (Pending)
-    6. Amazon SES for email services 
-
-## Project Structure
+## Getting Started
+**Ensure you're standing in the heart of your project directory, where the env_config.json and .bashrc should be** as visible as the twin suns of Tatooine. This file is the map to your galaxy, guiding Cloud Wookiee on what environments to build, destroy, or test.
+``` bash
+source .bashrc
 ```
-.
-├── README.md
-├── environments
-│   ├── dev
-│   │   ├── backend.tf
-│   │   ├── example.terraform.tfvars
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   ├── terraform.tfvars
-│   │   └── variables.tf
-│   └── prod
-│       ├── backend.tf
-│       ├── main.tf
-│       ├── output.tf
-│       ├── terraform.tfvars
-│       └── variables.tf
-├── global
-│   ├── iam
-│   └── s3
-├── modules
-│   ├── ec2
-│   ├── elb
-│   ├── igw
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variable.tf
-│   ├── nacl
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variable.tf
-│   ├── nat
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variables.tf
-│   ├── rds
-│   ├── route_table
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variable.tf
-│   ├── subnet
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variables.tf
-│   └── vpc
-│       ├── main.tf
-│       ├── output.tf
-│       └── variables.tf
-├── providers
-│   └── aws.tf
-└── terraform.tfstate.d
-    └── dev
+## Command Arsenal
+### 1. deploy_env 
+This command deploys your environment. Simply execute cloudwookiee.deploy_env in the console, and watch as your infrastructure materializes from the ethers of the cloud.
+``` bash
+cloudwookiee.deploy_env
+```
+### 2. destroy_env
+cloudwookiee.destroy_env dismantles your environment, leaving no trace behind, as if you've successfully navigated an asteroid field.
 
+``` bash
+cloudwookiee.destroy_env
+```
+### 3. test_deploy
+cloudwookiee.test_deploy runs a dry run of your deployment, ensuring your shields are up and weapons operational.
+
+``` bash
+cloudwookiee.test_deploy
 ```
 
-## Target Network Design
-![Target Network Diagram](docs/20240226_target-network-diagram.jpg "Target Network Diagram")
+## Utilities
+### 1. cloudwookiee.help
+cloudwookiee.help will guide you back to the path, displaying available commands.
+
+``` bash
+cloudwookiee.help
+```
+
+## In Closing
+As you journey through your project's lifecycle, let Cloud Wookiee be the co-pilot you never knew you needed. With it, navigating the complexities of deployment becomes less about managing chaos and more about orchestrating harmony across the stars.
+
+May the Force (and Cloud Wookiee) be with you, always.
+
+---
+[Updated - JVU - 20240309]

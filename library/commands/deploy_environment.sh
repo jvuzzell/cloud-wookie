@@ -29,25 +29,23 @@ echo ""
 
 terraform init
 
-# Base network infrastructure
+# Implement base network
 terraform plan \
-  -target=module.my_vpc \
-  -target=module.public_subnet_1 \
-  -target=module.public_subnet_2 \
-  -target=module.private_subnet_1 \
-  -target=module.private_subnet_2 \
-  -target=module.igw \
-  -out=step1.plan
+  -target=module.base-network \
+  -out=step-1_base-network.plan
 
-terraform apply "step1.plan"
+terraform apply "step-1_base-network.plan"
 
-# 
-terraform plan -out=step2.plan
-terraform apply "step2.plan"
+# Implement routing within base network
+terraform plan \
+  -target=module.base-routing \
+  -out=step-2_base-routing.plan
+
+terraform apply "step-2_base-routing.plan"
 
 # Remove the plan file after apply for security, relevance, and cleaniness
-rm -f step1.plan
-rm -f step2.plan 
+rm -f step-1_base-network.plan
+rm -f step-2_base-routing.plan
 
 echo ""
 echo "----"
