@@ -1,5 +1,5 @@
 # Cloud Wookiee
-## Your Guide to Deployment Automation
+## Your Guide to Terraform Deployment Automation
 Welcome to Cloud Wookiee, the stalwart companion in your journey across the vast and sometimes tumultuous landscape of deployment automation. Cloud Wookiee empowers you to manage the lifecycle of your Terraform-based infrastructure with confidence and consistency.
  
 ### Documentation
