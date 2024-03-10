@@ -1,13 +1,13 @@
 # Cloud Wookiee
 ## Your Guide to Deployment Automation
-Welcome to Cloud Wookiee, the stalwart companion in your journey across the vast and sometimes tumultuous landscape of deployment automation. Cloud Wookiee empowers you to manage the lifecycle of your Terraform-based infrastructure with the grace of a Jedi.
+Welcome to Cloud Wookiee, the stalwart companion in your journey across the vast and sometimes tumultuous landscape of deployment automation. Cloud Wookiee empowers you to manage the lifecycle of your Terraform-based infrastructure with confidence and consistency.
  
 ### Documentation
 - [Project Overview](docs/project-overview.md)
 - [Network Diagram](docs/assets/20240226_target-network-diagram.jpg)
 
 ## Getting Started
-**Ensure you're standing in the heart of your project directory, where the env_config.json and .bashrc should be** as visible as the twin suns of Tatooine. This file is the map to your galaxy, guiding Cloud Wookiee on what environments to build, destroy, or test.
+**Ensure you're standing in the heart of your project directory, where the env_config.json and .bashrc are located**. This file is the map to your galaxy, guiding Cloud Wookiee on what environments to build, destroy, or test.
 ``` bash
 source .bashrc
 ```
@@ -40,8 +40,6 @@ cloudwookiee.help
 
 ## In Closing
 As you journey through your project's lifecycle, let Cloud Wookiee be the co-pilot you never knew you needed. With it, navigating the complexities of deployment becomes less about managing chaos and more about orchestrating harmony across the stars.
-
-May the Force (and Cloud Wookiee) be with you, always.
 
 ---
 [Updated - JVU - 20240309]
