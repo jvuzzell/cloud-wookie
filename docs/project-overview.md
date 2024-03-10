@@ -1,5 +1,4 @@
 # Summary 
-(Work in progress - documentation pending)
 
 ## Goals
 Managing software environments (DEV, PROD, QA, etc) using reusable and version controlled components, this project demonstrates a generalized implementation of AWS services.
