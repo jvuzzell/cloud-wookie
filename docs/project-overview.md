@@ -90,4 +90,4 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 ```
 
 ## Target Network Design
-![Target Network Diagram](docs/20240226_target-network-diagram.jpg "Target Network Diagram")
+![Target Network Diagram](/docs/assets/20240226_target-network-diagram.jpg "Target Network Diagram")
