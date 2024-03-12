@@ -20,7 +20,8 @@ target_env_dir="$ENVIRONMENTS_DIR/$env_var"
 
 # Check if the environment directory exists
 if [ -d "$target_env_dir" ]; then
-    echo "Directory for environment '$env_var' exists: $target_env_dir"
+    echo ""
+    echo "Changing the directory: $target_env_dir"
     cd "$target_env_dir"
 else
     echo "No directory found for environment '$env_var'."
