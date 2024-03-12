@@ -29,7 +29,6 @@ fi
 # Aliases for Terraform Deployment Scripts
 alias deploy_env="$COMMAND_DIR/deploy_environment.sh"
 alias destroy_env="$COMMAND_DIR/destroy_environment.sh"
-alias test_deploy="$COMMAND_DIR/test_deploy.sh"
 
 # Utilities 
 cloudwookiee.help(){
@@ -39,11 +38,23 @@ cloudwookiee.help(){
 alias cloudwookiee=cloudwookiee.help
 
 cloudwookiee.deploy_env() {
-    deploy_env
+    if [ "$#" -ne 1 ]; then
+        echo ""
+        echo "Usage: cloudwookiee.deploy_env <environment_name>"
+        echo ""
+        return 1
+    fi
+    deploy_env "$1"
 }
 
 cloudwookiee.destroy_env() {
-    destroy_env
+    if [ "$#" -ne 1 ]; then
+        echo ""
+        echo "Usage: cloudwookiee.destroy_env <environment_name>"
+        echo ""
+        return 1
+    fi
+    destroy_env "$1"
 }
 
 cloudwookiee.test_deploy() {

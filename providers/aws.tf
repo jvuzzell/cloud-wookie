@@ -9,5 +9,5 @@ terraform {
 
 provider "aws" {
   region = "${AWS_REGION}"
-  profile = "${PROFILE}"
+  profile = "${AWS_PROFILE}"
 }

@@ -1,0 +1,5 @@
+{
+    "AWS_PROFILE": "",
+    "TFVARS_AWS_SECRET_NAME": "",
+    "AWS_SECRETS_REGION" : ""
+}

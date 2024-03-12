@@ -2,5 +2,5 @@
     "PROJECT_DIR": "/path/to/terraform-deployment",
     "ENVIRONMENTS_DIR": "/path/to/terraform-deployment/environments",
     "ENVIRONMENTS": ["dev", "staging", "prod"], 
-    "AWS_PROFILE": "aws_profile_name"
+    "AWS_PROFILE": ""
 }

@@ -14,8 +14,7 @@ fi
 
 # Load and export the environment variables from the JSON file
 export PROJECT_DIR=$(extract_json_string_attr "PROJECT_DIR" "$CONFIG_FILE")
-export ENVIRONMENTS_DIR=$(extract_json_string_attr "ENVIRONMENTS_DIR" "$CONFIG_FILE") 
-export AWS_PROFILE=$(extract_json_string_attr "AWS_PROFILE" "$CONFIG_FILE")
+export ENVIRONMENTS_DIR=$(extract_json_string_attr "ENVIRONMENTS_DIR" "$CONFIG_FILE")
 ENVIRONMENTS=$(extract_json_array "ENVIRONMENTS" "$CONFIG_FILE")
 
 # Convert space-separated values to bash array

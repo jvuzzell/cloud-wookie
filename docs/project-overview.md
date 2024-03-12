@@ -8,7 +8,8 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
     3. Serverless VMs using Amazon Fargate for compute (Pending)
     4. Serverless VMs using Amazon RDS for database storage (Pending)
     5. Amazon S3 for cloud storage and archival (Pending)
-    6. Amazon SES for email services 
+    6. Amazon SES for email services  
+    7. Store Terraform state remotely
 
 ## Project Structure
 ```
@@ -90,4 +91,7 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 ```
 
 ## Target Network Design
-![Target Network Diagram](/docs/assets/20240226_target-network-diagram.jpg "Target Network Diagram")
+![Target Network Diagram](/docs/assets/20240311_target-network-diagram.jpg "Target Network Diagram")
+
+## Target Service Design
+![Target Services](/docs/assets/20240311_target-services.jpg "Target Services")
