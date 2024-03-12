@@ -16,39 +16,38 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 .
 ├── README.md
 ├── docs
-│   ├── assets
-│   │   └── 20240226_target-network-diagram.jpg
-│   └── project-overview.md
 ├── env_config.json
 ├── environments
-│   ├── dev
-│   │   ├── backend.tf
-│   │   ├── example.terraform.tfvars
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   ├── terraform.tfstate
-│   │   ├── terraform.tfstate.backup
-│   │   ├── terraform.tfvars
-│   │   └── variables.tf
-│   └── prod
-│       ├── backend.tf
-│       ├── main.tf
-│       ├── output.tf
-│       ├── terraform.tfvars
-│       └── variables.tf
+│   └── dev
+│       ├── example_wookie_config.json
+│       ├── graphs
+│       │   ├── step-1_base-network.plan
+│       │   └── step-2_base-routing.plan
+│       ├── terraform_config
+│       │   ├── backend.tf
+│       │   ├── example.terraform.tfvars
+│       │   ├── main.tf                    <--- Step #1 - START HERE to inspect Terraform conf  uration
+│       │   ├── modules                    <--- Step #2 - Review highest-level stacks
+│       │   │   ├── archive      
+│       │   │   ├── network               
+│       │   │   ├── vpn
+│       │   │   └── web-application
+│       │   ├── output.tf
+│       │   ├── terraform.tfstate
+│       │   ├── terraform.tfstate.backup
+│       │   ├── terraform.tfvars           <--- Step #3 - Environment specific configurations
+│       │   └── variables.tf
+│       ├── wookie_config.json
+│       └── wookie_deployment_steps.json   <--- Step #4 - Customizable sequencing of module deployment (network > vpn > web-app)
 ├── example_env_config.json
 ├── library
 │   ├── commands
 │   │   ├── deploy_environment.sh
 │   │   ├── destroy_environment.sh
-│   │   ├── set_environment.sh
-│   │   └── test_deploy.sh
+│   │   └── set_environment.sh
 │   └── utilities
-│       ├── extract_json_array.sh
-│       ├── extract_json_keys.sh
-│       └── extract_json_string_attr.sh
 ├── modules
-│   ├── _stacks
+│   ├── _stacks                           <--- Step #5 - Second tier reusable stacks
 │   │   └── base
 │   │       ├── network
 │   │       │   ├── main.tf
@@ -58,32 +57,9 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 │   │           ├── main.tf
 │   │           ├── output.tf
 │   │           └── variables.tf
-│   ├── igw
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variable.tf
-│   ├── nacl
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variable.tf
-│   ├── nat
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variables.tf
-│   ├── route_table
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variable.tf
-│   ├── subnet
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variables.tf
-│   └── vpc
-│       ├── main.tf
-│       ├── output.tf
-│       └── variables.tf
+|   └── <individual modules>             <--- Step #6 - Lowest level of resusability
 ├── providers
-│   └── aws.tf
+├── terraform.tfstate
 └── terraform.tfstate.d
     └── dev
         └── terraform.tfstate
