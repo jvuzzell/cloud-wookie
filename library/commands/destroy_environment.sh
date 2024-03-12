@@ -30,9 +30,9 @@ echo ""
 
 #Extract variables from "$target_env_dir/wookie-config.json"
 
-export AWS_PROFILE=$(extract_json_string_attr "AWS_PROFILE" "$target_env_dir/wookie_config.json") 
-export TFVARS_AWS_SECRET_NAME=$(extract_json_string_attr "TFVARS_AWS_SECRET_NAME" "$target_env_dir/wookie_config.json")
-export AWS_SECRETS_REGION=$(extract_json_string_attr "AWS_SECRETS_REGION" "$target_env_dir/wookie_config.json")
+export AWS_PROFILE=$(extract_json_string_attr "AWS_PROFILE" "$target_env_dir/wookiee_config.json") 
+export TFVARS_AWS_SECRET_NAME=$(extract_json_string_attr "TFVARS_AWS_SECRET_NAME" "$target_env_dir/wookiee_config.json")
+export AWS_SECRETS_REGION=$(extract_json_string_attr "AWS_SECRETS_REGION" "$target_env_dir/wookiee_config.json")
 
 # Check if a cached SSO file exists
 echo ""

@@ -32,9 +32,9 @@ echo ""
 
 #Extract variables from "$target_env_dir/wookie-config.json"
 
-export AWS_PROFILE=$(extract_json_string_attr "AWS_PROFILE" "$target_env_dir/wookie_config.json") 
-export TFVARS_AWS_SECRET_NAME=$(extract_json_string_attr "TFVARS_AWS_SECRET_NAME" "$target_env_dir/wookie_config.json")
-export AWS_SECRETS_REGION=$(extract_json_string_attr "AWS_SECRETS_REGION" "$target_env_dir/wookie_config.json")
+export AWS_PROFILE=$(extract_json_string_attr "AWS_PROFILE" "$target_env_dir/wookiee_config.json") 
+export TFVARS_AWS_SECRET_NAME=$(extract_json_string_attr "TFVARS_AWS_SECRET_NAME" "$target_env_dir/wookiee_config.json")
+export AWS_SECRETS_REGION=$(extract_json_string_attr "AWS_SECRETS_REGION" "$target_env_dir/wookiee_config.json")
 
 # Check if a cached SSO file exists
 echo ""
@@ -118,7 +118,7 @@ echo "Starting deployment steps..."
 echo ""
 
 # Extracting the keys from the JSON file
-keys=$(extract_json_keys "$target_env_dir/wookie_deployment_steps.json")
+keys=$(extract_json_keys "$target_env_dir/wookiee_deployment_steps.json")
 
 echo "Deployment Steps"
 echo "--"
@@ -129,7 +129,7 @@ if [ -z "$keys" ]; then
     echo "No keys were extracted from the JSON file. Please check the file format and the extract_json_keys function."
 else
     for key in $keys; do
-        target=$(extract_json_string_attr "$key" "$target_env_dir/wookie_deployment_steps.json") 
+        target=$(extract_json_string_attr "$key" "$target_env_dir/wookiee_deployment_steps.json") 
         echo $target
         terraform plan \
         -target="$target" \

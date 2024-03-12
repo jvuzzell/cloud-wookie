@@ -4,6 +4,7 @@ Welcome to Cloud Wookiee, the stalwart companion in your journey across the vast
  
 ### Documentation
 - [Project Overview](docs/project-overview.md)
+- [Upgrading the Infrastructure](docs/upgrading-the-infrastructure.md)
 - [Network Diagram](docs/assets/20240311_target-network-diagram.jpg)
 - [Application Architecture](docs/assets/20240311_target-service-diagram.jpg)
 
@@ -42,9 +43,10 @@ As you journey through your project's lifecycle, let Cloud Wookiee be the co-pil
 ## Changelog 
 
 ### 20240311-JVU
-    * Updates documentation adding new diagrams, and overviews for deployment script
-    * Remove cloudwookiee.test_plan command (temporarily) 
-    * Reorganizes modules in the environment directory to support 
-    * Expands Cloudwookiees automation capabilities by adding configs that manage terraform apply along with allowing cloudwwokiee to retrieve terraform.tfvars files from AWS Secrets Manager
-    * Stores environment specific plans in graphs directory to support future integrations with visualization software
-    * Updates deployment and destruction scripts to support targetted environments
+* Updates documentation adding new diagrams, and overviews for deployment script
+* Remove cloudwookiee.test_plan command (temporarily) 
+* Reorganizes modules in the environment directory to support 
+* Expands Cloudwookiees automation capabilities by adding configs that manage terraform apply along with allowing cloudwwokiee to retrieve terraform.tfvars files from AWS Secrets Manager
+* Stores environment specific plans in graphs directory to support future integrations with visualization software
+* Updates deployment and destruction scripts to support targetted environments 
+* Adds new chapter to documentation discussing how to upgrade the target infrastructure and services

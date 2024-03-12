@@ -19,7 +19,7 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 ├── env_config.json
 ├── environments
 │   └── dev
-│       ├── example_wookie_config.json
+│       ├── example_wookiee_config.json
 │       ├── graphs
 │       │   ├── step-1_base-network.plan
 │       │   └── step-2_base-routing.plan
@@ -37,8 +37,8 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 │       │   ├── terraform.tfstate.backup
 │       │   ├── terraform.tfvars           <--- Step #3 - Environment specific configurations
 │       │   └── variables.tf
-│       ├── wookie_config.json
-│       └── wookie_deployment_steps.json   <--- Step #4 - Customizable sequencing of module deployment (network > vpn > web-app)
+│       ├── wookiee_config.json
+│       └── wookiee_deployment_steps.json   <--- Step #4 - Customizable sequencing of module deployment (network > vpn > web-app)
 ├── example_env_config.json
 ├── library
 │   ├── commands

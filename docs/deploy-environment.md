@@ -32,5 +32,5 @@ Pre-requisites
 
 The script assumes AWS CLI is configured for SSO and you have necessary permissions in AWS Secrets Manager.
 A valid wookie-config.json in the target environment directory specifying AWS profile, secret name for tfvars, and AWS region.
-The wookie_deployment_steps.json should exist in the target environment directory, defining the Terraform resources to target during deployment.
+The wookiee_deployment_steps.json should exist in the target environment directory, defining the Terraform resources to target during deployment.
 Please ensure all pre-requisites are met to avoid execution errors and to ensure a smooth deployment process.
