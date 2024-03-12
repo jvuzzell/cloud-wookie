@@ -1,5 +1,0 @@
-{
-    "AWS_PROFILE": "terra_test",
-    "TFVARS_AWS_SECRET_NAME": "dev/CloudWookieDemo/tfvars",
-    "AWS_SECRETS_REGION" : "us-east-2"
-}
