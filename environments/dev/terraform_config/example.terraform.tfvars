@@ -67,3 +67,13 @@ egress_rules = [
   },
   // Add more rules as needed
 ]
+
+/**
+ * Client VPN
+ */
+
+client_vpn_endpoint_name       = "MyClientVPN"
+client_vpn_security_group_name = "client-vpn-sg"
+client_vpn_cidr_block          = "10.0.5.0/22" 
+client_vpn_zone_id             = "value" 
+domain_name                    = "value"
