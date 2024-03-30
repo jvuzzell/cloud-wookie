@@ -1,4 +1,5 @@
 {
     "step-1_base-network": "module.network.module.base-network", 
-    "step-2_base-routing": "module.network.module.base-routing"
+    "step-2_base-routing": "module.network.module.base-routing", 
+    "step-3_client-vpn-attachment": "module.network.module.client-vpn-attachment"
 }

@@ -35,3 +35,17 @@ module "base-routing" {
     private_subnet_ids       = module.base-network.private_subnet_ids
     igw_id                   = module.base-network.igw_id
 }
+
+module "client-vpn-attachment" { 
+    source = "../../../../../modules/_stacks/base/client_vpn_attachment"
+
+    vpc_id                                    = module.base-network.vpc_id
+    domain_name                               = var.domain_name
+    client_vpn_zone_id                        = var.client_vpn_zone_id
+    common_tags                               = var.common_tags
+    vpc_cidr_block                            = var.vpc_cidr_block
+    client_vpn_cidr_block                     = var.client_vpn_cidr_block
+    client_vpn_endpoint_name                  = var.client_vpn_endpoint_name 
+    client_vpn_security_group_name            = var.client_vpn_security_group_name
+    client_vpn_network_association_subnet_ids = module.base-network.private_subnet_ids
+}
