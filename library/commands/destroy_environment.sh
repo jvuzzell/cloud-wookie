@@ -6,15 +6,16 @@ source "$LIBRARY_DIR/utilities/extract_json_keys.sh"
 echo ""
 
 # Check for argument presence
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
     echo ""
-    echo "Usage: cloudwookiee.destroy_env <environment_name>"
+    echo "Usage: cloudwookiee.destroy_env <project_directory> <environment_name>"
     echo ""
     exit 1
 fi
 
-env_var="$1"
-target_env_dir="$ENVIRONMENTS_DIR/$env_var"
+project_var="$1"
+env_var="$2"
+target_env_dir="$PROJECT_DIR/$project_var/$env_var"
 
 # Check if the environment directory exists
 if [ -d "$target_env_dir" ]; then

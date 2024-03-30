@@ -38,23 +38,23 @@ cloudwookiee.help(){
 alias cloudwookiee=cloudwookiee.help
 
 cloudwookiee.deploy_env() {
-    if [ "$#" -ne 1 ]; then
+    if [ "$#" -ne 2 ]; then
         echo ""
-        echo "Usage: cloudwookiee.deploy_env <environment_name>"
+        echo "Usage: cloudwookiee.deploy_env <project_directory> <environment_name>"
         echo ""
         return 1
     fi
-    deploy_env "$1"
+    deploy_env "$1" "$2"
 }
 
 cloudwookiee.destroy_env() {
-    if [ "$#" -ne 1 ]; then
+    if [ "$#" -ne 2 ]; then
         echo ""
-        echo "Usage: cloudwookiee.destroy_env <environment_name>"
+        echo "Usage: cloudwookiee.destroy_env <project_directory> <environment_name>"
         echo ""
         return 1
     fi
-    destroy_env "$1"
+    destroy_env "$1" "$2"
 }
 
 cloudwookiee.test_deploy() {

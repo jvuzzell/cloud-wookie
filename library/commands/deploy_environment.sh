@@ -4,15 +4,16 @@ source "$LIBRARY_DIR/utilities/extract_json_string_attr.sh"
 source "$LIBRARY_DIR/utilities/extract_json_keys.sh"
 
 # Check for argument presence
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
     echo ""
-    echo "Usage: cloudwookiee.deploy_env <environment_name>"
+    echo "Usage: cloudwookiee.deploy_env <project_directory> <environment_name>"
     echo ""
     exit 1
 fi
 
-env_var="$1"
-target_env_dir="$ENVIRONMENTS_DIR/$env_var"
+project_var="$1"
+env_var="$2"
+target_env_dir="$PROJECT_DIR/$project_var/$env_var"
 
 # Remove the plan files after apply for security, relevance, and cleaniness
 echo "Clearing the graph directory..."

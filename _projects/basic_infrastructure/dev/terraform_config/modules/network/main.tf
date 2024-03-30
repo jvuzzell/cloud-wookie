@@ -2,7 +2,7 @@ provider "aws" {
     region = "us-east-2"
 }
 module "base-network" {
-    source = "../../../../../modules/_stacks/base/network"
+    source = "../../../../../../modules/_stacks/base/network"
     
     vpc_id                   = var.vpc_id
     common_tags              = var.common_tags
@@ -16,7 +16,7 @@ module "base-network" {
 }
 
 module "base-routing" {
-    source = "../../../../../modules/_stacks/base/routing"
+    source = "../../../../../../modules/_stacks/base/routing"
     
     common_tags              = var.common_tags
     vpc_cidr_block           = var.vpc_cidr_block
@@ -37,7 +37,7 @@ module "base-routing" {
 }
 
 module "client-vpn-attachment" { 
-    source = "../../../../../modules/_stacks/base/client_vpn_attachment"
+    source = "../../../../../../modules/_stacks/base/client_vpn_attachment"
 
     vpc_id                                    = module.base-network.vpc_id
     domain_name                               = var.domain_name
