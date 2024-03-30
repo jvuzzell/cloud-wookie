@@ -25,6 +25,8 @@ else
     exit 2
 fi
 
+mkdir $target_env_dir/graphs
+
 echo "-----"
 echo ""
 

@@ -3,10 +3,6 @@
 source "$LIBRARY_DIR/utilities/extract_json_string_attr.sh"
 source "$LIBRARY_DIR/utilities/extract_json_keys.sh"
 
-# Remove the plan files after apply for security, relevance, and cleaniness
-echo "Clearing the graph directory..."
-    rm -rf "$target_env_dir/graphs/*"
-
 # Check for argument presence
 if [ "$#" -ne 1 ]; then
     echo ""
@@ -17,6 +13,12 @@ fi
 
 env_var="$1"
 target_env_dir="$ENVIRONMENTS_DIR/$env_var"
+
+# Remove the plan files after apply for security, relevance, and cleaniness
+echo "Clearing the graph directory..."
+    rm -rf "$target_env_dir/graphs/"
+
+mkdir $target_env_dir/graphs
 
 # Check if the environment directory exists
 if [ -d "$target_env_dir" ]; then
@@ -84,6 +86,12 @@ else
     exit 1
 fi
 
+echo "Module providers:"
+terraform providers
+
+echo "-----"
+echo ""
+
 terraform init
 
 echo "-----"
@@ -132,11 +140,18 @@ else
     for key in $keys; do
         target=$(extract_json_string_attr "$key" "$target_env_dir/wookiee_deployment_steps.json") 
         echo $target
+        echo "$target_env_dir/graphs/$key.plan"
+
         terraform plan \
         -target="$target" \
         -out="$target_env_dir/graphs/$key.plan"
 
-        terraform apply "$target_env_dir/graphs/$key.plan"
+        terraform apply "$target_env_dir/graphs/$key.plan" 
+
+        echo ""
+        echo "Cloudwookie - Terraform target implemented: $key"
+        echo "-----"
+        echo ""
     done
 fi
 echo ""
@@ -152,7 +167,7 @@ echo    # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "Clearing the graph directory..."
-    rm -rf "$target_env_dir/graphs/*"
+    rm -rf "$target_env_dir/graphs/"
     echo "Graph directory cleared."
 else
     echo "Graph directory not cleared. Manually clean up this directory to reduce risk exposure"
