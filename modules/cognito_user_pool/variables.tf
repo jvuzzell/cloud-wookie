@@ -33,8 +33,12 @@ variable "password_require_uppercase" {
   default     = true
 }
 
-variable "auto_verified_attributes" {
+variable "user_pool_auto_verify_attr" {
   description = "The attributes to be auto-verified. Possible values: email, phone_number."
   type        = list(string)
-  default     = ["email"]
+  default     = ["email"]  
+}
+
+variable "user_pool_app_client_name" {
+  type        = string
 }

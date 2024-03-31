@@ -4,10 +4,9 @@ variable "user_pool_name" {
 }
 
 variable "user_pool_auto_verify_attr" {
-  description = "The attributes to be auto-verified. Possible values: email, phone_number."
+  description = "Attributes that are automatically verified when the user signs up. Common values are 'email' and 'phone_number'."
   type        = list(string)
 }
-
 
 variable "identity_pool_name" {
   description = "The name of the Cognito Identity Pool. Identity Pools enable you to grant your users access to other AWS services."
@@ -20,5 +19,6 @@ variable "identity_pool_region" {
 }
 
 variable "user_pool_app_client_name" {
+  description = ""
   type        = string
 }

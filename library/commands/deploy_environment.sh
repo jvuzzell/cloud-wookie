@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source "$LIBRARY_DIR/utilities/extract_json_string_attr.sh"
-source "$LIBRARY_DIR/utilities/extract_json_keys.sh"
+source "$LIBRARY_DIR/utilities/extract_json_keys.sh" 
 
 # Check for argument presence
 if [ "$#" -ne 2 ]; then
@@ -14,12 +14,14 @@ fi
 project_var="$1"
 env_var="$2"
 target_env_dir="$PROJECT_DIR/$project_var/$env_var"
+graph_folder="$target_env_dir/graphs"
 
 # Remove the plan files after apply for security, relevance, and cleaniness
 echo "Clearing the graph directory..."
-    rm -rf "$target_env_dir/graphs/"
+    rm -rf $graph_folder
+echo ""
 
-mkdir $target_env_dir/graphs
+mkdir $graph_folder
 
 # Check if the environment directory exists
 if [ -d "$target_env_dir" ]; then
@@ -90,6 +92,24 @@ fi
 echo "Module providers:"
 terraform providers
 
+echo ""
+echo "-----"
+echo ""
+
+# Remove the plan files after apply for security, relevance, and cleaniness
+read -p "Continue? (y/n): " -n 1 -r
+echo    # move to a new line
+
+if [[ $REPLY =~ ^[Nn]$ ]]
+then
+    echo "Infrastructure not deployed. Exiting..."
+    echo ""
+    echo "-----"
+    echo ""
+    exit 1
+fi
+
+echo ""
 echo "-----"
 echo ""
 
@@ -140,21 +160,43 @@ if [ -z "$keys" ]; then
 else
     for key in $keys; do
         target=$(extract_json_string_attr "$key" "$target_env_dir/wookiee_deployment_steps.json") 
-        echo $target
-        echo "$target_env_dir/graphs/$key.plan"
+        plan_file="$graph_folder/$key.plan"
+
+        echo ""
+        echo "Cloudwookie - Terraform target implementing:" 
+        echo ""
+        echo "> Wookie Step : $key"
+        echo "> Target      : $target"
+        echo "> Plan        : $plan_file"
+        echo ""
 
         terraform plan \
         -target="$target" \
-        -out="$target_env_dir/graphs/$key.plan"
+        -out="$plan_file"
 
-        terraform apply "$target_env_dir/graphs/$key.plan" 
+        # Remove the plan files after apply for security, relevance, and cleaniness
+        echo
+        read -p "Continue with this plan? (y/n): " -n 1 -r
+        echo
+
+        if [[ $REPLY =~ ^[Nn]$ ]]
+        then
+            echo "Target $key, was not implemented. Exiting..."
+            echo ""
+            echo "-----"
+            echo ""
+            exit 1
+        fi
+
+        terraform apply $plan_file
 
         echo ""
         echo "Cloudwookie - Terraform target implemented: $key"
-        echo "-----"
         echo ""
+        echo "-----"
     done
 fi
+
 echo ""
 echo "Deployment steps completed."
 
@@ -163,7 +205,7 @@ echo "-----"
 
 # Remove the plan files after apply for security, relevance, and cleaniness
 read -p "Do you want to clear the graph directory? (y/n): " -n 1 -r
-echo    # move to a new line
+echo  ""
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

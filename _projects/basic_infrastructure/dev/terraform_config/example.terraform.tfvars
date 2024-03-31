@@ -77,3 +77,14 @@ client_vpn_security_group_name = "client-vpn-sg"
 client_vpn_cidr_block          = "10.0.5.0/22" 
 client_vpn_zone_id             = "value" 
 domain_name                    = "value"
+
+/**
+ * User and Identity Pool
+ */
+
+user_pool_name             = "MyUserPool" 
+user_pool_auto_verify_attr = ["email"] 
+user_pool_app_client_name  = "MyAppClient"
+
+identity_pool_name         = "MyIdentityPool" 
+identity_pool_region       = "us-east-2"

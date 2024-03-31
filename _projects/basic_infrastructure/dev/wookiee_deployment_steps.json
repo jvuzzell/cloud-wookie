@@ -1,6 +1,7 @@
-{
-    "step-1_base-network": "module.network.module.base-network", 
-    "step-2_base-routing": "module.network.module.base-routing", 
-    "step-3_client-vpn-attachment": "module.network.module.client-vpn-attachment", 
-    "step-4_identity-management": "module.identity-management.module.directories"
+{ 
+    "step-1_certificates": "module.certificates.module.acm_certificate",
+    "step-2_base-network": "module.network.module.base-network",
+    "step-3_base-routing": "module.network.module.base-routing",
+    "step-4_client-vpn-attachment": "module.network.module.client-vpn-attachment",
+    "step-5_identity-management": "module.identity-management.module.directories"
 }

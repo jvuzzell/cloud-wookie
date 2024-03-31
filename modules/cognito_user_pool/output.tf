@@ -10,5 +10,5 @@ output "user_pool_arn" {
 
 output "client_id" {
   description = "The client ID of the Cognito User Pool app client."
-  value       = aws_cognito_user_pool_client.my_client.id # Adjust based on your resource name
+  value       = aws_cognito_user_pool_client.user_pool_client.id # Adjust based on your resource name
 }

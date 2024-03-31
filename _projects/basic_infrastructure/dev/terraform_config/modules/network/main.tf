@@ -47,5 +47,6 @@ module "client-vpn-attachment" {
     client_vpn_cidr_block                     = var.client_vpn_cidr_block
     client_vpn_endpoint_name                  = var.client_vpn_endpoint_name 
     client_vpn_security_group_name            = var.client_vpn_security_group_name
-    client_vpn_network_association_subnet_ids = module.base-network.private_subnet_ids
+    client_vpn_network_association_subnet_ids = module.base-network.private_subnet_ids 
+    server_certificate_arn                    = var.client_vpn_server_cert_arn
 }
