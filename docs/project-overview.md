@@ -17,29 +17,28 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 ├── README.md
 ├── docs
 ├── env_config.json
-├── environments
-│   └── dev
-│       ├── example_wookiee_config.json
-│       ├── graphs
-│       │   ├── step-1_base-network.plan
-│       │   └── step-2_base-routing.plan
-│       ├── terraform_config
-│       │   ├── backend.tf
-│       │   ├── example.terraform.tfvars
-│       │   ├── main.tf                    <--- Step #1 - START HERE to inspect Terraform conf  uration
-│       │   ├── modules                    <--- Step #2 - Review highest-level stacks
-│       │   │   ├── archive      
-│       │   │   ├── network               
-│       │   │   ├── vpn
-│       │   │   └── web-application
-│       │   ├── output.tf
-│       │   ├── terraform.tfstate
-│       │   ├── terraform.tfstate.backup
-│       │   ├── terraform.tfvars           <--- Step #3 - Environment specific configurations
-│       │   └── variables.tf
-│       ├── wookiee_config.json
-│       └── wookiee_deployment_steps.json   <--- Step #4 - Customizable sequencing of module deployment (network > vpn > web-app)
-├── example_env_config.json
+├── _projects
+│   └── basic_infrastructure
+│       └── dev
+│           ├── graphs
+│           │   ├── step-1_base-network.plan
+│           │   └── step-2_base-routing.plan    
+│           ├── terraform_config
+│           │   ├── backend.tf
+│           │   ├── example.terraform.tfvars
+│           │   ├── main.tf                     <--- Step #1 - START HERE to inspect Terraform conf  uration
+│           │   ├── modules                     <--- Step #2 - Review highest-level stacks
+│           │   │   ├── archive
+│           │   │   ├── certs
+│           │   │   ├── identity-management
+│           │   │   ├── network
+│           │   │   └── web-application
+│           │   ├── terraform.tfstate
+│           │   ├── terraform.tfstate.backup
+│           │   ├── terraform.tfvars            <--- Step #3 - Environment specific configurations
+│           │   └── variables.tf
+│           ├── wookiee_config.json
+│           └── wookiee_deployment_steps.json   <--- Step #4 - Customizable sequencing of module deployment (network > vpn > web-app)
 ├── library
 │   ├── commands
 │   │   ├── deploy_environment.sh
@@ -47,8 +46,11 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 │   │   └── set_environment.sh
 │   └── utilities
 ├── modules
-│   ├── _stacks                           <--- Step #5 - Second tier reusable stacks
+│   ├── _stacks                                 <--- Step #5 - Second tier reusable stacks
 │   │   └── base
+│   │       ├── client_vpn_attachment
+│   │       │   ├── main.tf
+│   │       │   └── variables.tf
 │   │       ├── network
 │   │       │   ├── main.tf
 │   │       │   ├── output.tf
@@ -57,12 +59,9 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 │   │           ├── main.tf
 │   │           ├── output.tf
 │   │           └── variables.tf
-|   └── <individual modules>             <--- Step #6 - Lowest level of resusability
-├── providers
-├── terraform.tfstate
-└── terraform.tfstate.d
-    └── dev
-        └── terraform.tfstate
+│   └── <individual modules>                    <--- Step #6 - Lowest level of resusability
+└── providers
+    └── aws.tf
 
 ```
 
