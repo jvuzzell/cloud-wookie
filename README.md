@@ -38,7 +38,6 @@ cloudwookiee.help
 As you journey through your project's lifecycle, let Cloud Wookiee be the co-pilot you never knew you needed. With it, navigating the complexities of deployment becomes less about managing chaos and more about orchestrating harmony across the stars.
 
 ---
-[Updated - JVU - 20240311]
 
 ## Changelog 
 
