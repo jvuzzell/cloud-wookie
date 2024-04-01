@@ -1,1 +1,0 @@
-# Declare your variables here

@@ -17,13 +17,13 @@ source .bashrc
 ### 1. deploy_env 
 This command deploys your environment. Simply execute cloudwookiee.deploy_env in the console, and watch as your infrastructure materializes from the ethers of the cloud.
 ``` bash
-cloudwookiee.deploy_env <environment_name>
+cloudwookiee.deploy_env <project_directory> <environment_name>
 ```
 ### 2. destroy_env
 cloudwookiee.destroy_env dismantles your environment, leaving no trace behind, as if you've successfully navigated an asteroid field.
 
 ``` bash
-cloudwookiee.destroy_env <environment_name>
+cloudwookiee.destroy_env <project_directory> <environment_name>
 ```
 
 ## Utilities
@@ -42,11 +42,17 @@ As you journey through your project's lifecycle, let Cloud Wookiee be the co-pil
 
 ## Changelog 
 
+### 20240331-JVU
+* CloudWookiee supports projects
+* Adds Terraform support for AWS User Pools, Identity Pools, and ACM Certificates
+* Adds CloudWookiee steps to deploy certificates and acceess pools
+* Updates documentation with new parameters and prompts regarding the infrastructure deployment and destruction scripts
+
 ### 20240311-JVU
 * Updates documentation adding new diagrams, and overviews for deployment script
 * Remove cloudwookiee.test_plan command (temporarily) 
 * Reorganizes modules in the environment directory to support 
-* Expands Cloudwookiees automation capabilities by adding configs that manage terraform apply along with allowing cloudwwokiee to retrieve terraform.tfvars files from AWS Secrets Manager
+* Expands Cloudwookiees automation capabilities by adding configs that manage terraform apply along with allowing cloudwookiee to retrieve terraform.tfvars files from AWS Secrets Manager
 * Stores environment specific plans in graphs directory to support future integrations with visualization software
 * Updates deployment and destruction scripts to support targetted environments 
 * Adds new chapter to documentation discussing how to upgrade the target infrastructure and services
