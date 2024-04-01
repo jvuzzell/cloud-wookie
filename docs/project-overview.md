@@ -26,7 +26,7 @@ Managing software environments (DEV, PROD, QA, etc) using reusable and version c
 │           ├── terraform_config
 │           │   ├── backend.tf
 │           │   ├── example.terraform.tfvars
-│           │   ├── main.tf                     <--- Step #1 - START HERE to inspect Terraform conf  uration
+│           │   ├── main.tf                     <--- Step #1 - START HERE to inspect Terraform configuration
 │           │   ├── modules                     <--- Step #2 - Review highest-level stacks
 │           │   │   ├── archive
 │           │   │   ├── certs
